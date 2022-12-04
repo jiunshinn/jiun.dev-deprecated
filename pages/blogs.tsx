@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import { useEffect, useState } from "react";
-import BlogCard from "../component/BlogCard";
+import BlogCard from "../components/BlogCard";
 
 interface Props {}
 
