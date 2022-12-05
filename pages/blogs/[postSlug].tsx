@@ -1,9 +1,15 @@
-import { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import {
+  GetStaticPaths,
+  GetStaticProps,
+  InferGetStaticPropsType,
+  NextPage,
+} from "next";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { ParsedUrlQuery } from "querystring";
 
-interface Props {}
+type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
 const SinglePost: NextPage<Props> = (props) => {
   return (
@@ -14,9 +20,20 @@ const SinglePost: NextPage<Props> = (props) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = (context) => {
+interface IStaticProps extends ParsedUrlQuery {
+  postSlug: string;
+}
+
+type Post = {
+  post: {
+    title: string;
+    content: string;
+  };
+};
+
+export const getStaticProps: GetStaticProps<Post> = (context) => {
   const { params } = context;
-  const { postSlug } = params as any;
+  const { postSlug } = params as IStaticProps;
   const filePathToRead = path.join(process.cwd(), "/posts/" + postSlug + ".md");
   const fileContents = fs.readFileSync(filePathToRead, "utf8");
   const { content, data } = matter(fileContents);
