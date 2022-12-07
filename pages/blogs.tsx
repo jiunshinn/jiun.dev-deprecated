@@ -8,6 +8,7 @@ interface PostApiResponse {
     title: string;
     slug: string;
     meta: string;
+    date: Date;
   }[];
 }
 
@@ -35,6 +36,7 @@ const Blogs: NextPage<Props> = ({ posts }) => {
                 title={post.title}
                 description={post.meta}
                 slug={post.slug}
+                date={post.date}
               />
             ))}
           </div>

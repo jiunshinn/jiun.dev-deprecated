@@ -4,9 +4,10 @@ interface Props {
   title: string;
   description: string;
   slug: string;
+  date: Date;
 }
 
-const BlogCard = ({ title, description, slug }: Props) => {
+const BlogCard = ({ title, description, slug, date }: Props) => {
   return (
     <Link href={"/blogs/" + slug}>
       <div className="py-8 flex flex-wrap md:flex-nowrap">
@@ -14,7 +15,7 @@ const BlogCard = ({ title, description, slug }: Props) => {
           <span className="font-semibold title-font text-gray-700">
             CATEGORY
           </span>
-          <span className="mt-1 text-gray-500 text-sm">12 Jun 2019</span>
+          <span className="mt-1 text-gray-500 text-sm">{date.toString()}</span>
         </div>
         <div className="md:flex-grow">
           <h2 className="text-2xl font-medium text-gray-900 title-font mb-2">
