@@ -2,6 +2,7 @@
 title: How to use useEffect hook
 meta: Maybe you’ve heard of it, maybe you haven’t. Zig is a new programming language that seems to be growing in popularity. Let’s do a quick dive into what it is.
 slug: how-to-use-useEffect-hook
+date: "2020-12-07"
 ---
 
 If you stay up to date with niche software news, your ears may recently have twitched at the release of a new programming language: V.
