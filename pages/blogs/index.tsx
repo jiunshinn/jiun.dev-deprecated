@@ -1,7 +1,7 @@
 import { InferGetStaticPropsType, NextPage } from "next";
-import BlogCard from "../components/BlogCard";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
+import BlogCard from "../../components/BlogCard";
+import Footer from "../../components/Footer";
+import Header from "../../components/Header";
 
 interface PostApiResponse {
   postInfo: {
