@@ -17,8 +17,10 @@ const SinglePost: NextPage<Props> = ({ post }) => {
   const { title, content } = post;
   return (
     <div className="max-w-3xl mx-auto">
-      <h1>{title}</h1>
-      <MDXRemote {...content} />
+      <h1 className="font-semibold text-2xl py-5">{title}</h1>
+      <div className="prose pb-20">
+        <MDXRemote {...content} />
+      </div>
     </div>
   );
 };
