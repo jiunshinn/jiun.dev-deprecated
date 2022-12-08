@@ -37,22 +37,31 @@ type Post = {
 };
 
 export const getStaticProps: GetStaticProps<Post> = async (context) => {
-  const { params } = context;
-  const { postSlug } = params as IStaticProps;
-  const filePathToRead = path.join(process.cwd(), "/posts/" + postSlug + ".md");
-  const fileContent = fs.readFileSync(filePathToRead, "utf8");
-  //   const { content, data } = matter(fileContent);
-  const source: any = await serialize(fileContent, {
-    parseFrontmatter: true,
-  });
-  return {
-    props: {
-      post: {
-        content: source,
-        title: source.frontmatter.title,
+  try {
+    const { params } = context;
+    const { postSlug } = params as IStaticProps;
+    const filePathToRead = path.join(
+      process.cwd(),
+      "/posts/" + postSlug + ".md"
+    );
+    const fileContent = fs.readFileSync(filePathToRead, "utf8");
+    //   const { content, data } = matter(fileContent);
+    const source: any = await serialize(fileContent, {
+      parseFrontmatter: true,
+    });
+    return {
+      props: {
+        post: {
+          content: source,
+          title: source.frontmatter.title,
+        },
       },
-    },
-  };
+    };
+  } catch (error) {
+    return {
+      notFound: true,
+    };
+  }
 };
 
 export const getStaticPaths: GetStaticPaths = () => {
@@ -65,7 +74,7 @@ export const getStaticPaths: GetStaticPaths = () => {
   });
   return {
     paths,
-    fallback: false, // can also be true or 'blocking'
+    fallback: "blocking",
   };
 };
 
