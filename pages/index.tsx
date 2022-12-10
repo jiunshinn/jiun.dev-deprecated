@@ -18,7 +18,6 @@ type Props = InferGetStaticPropsType<typeof getStaticProps>;
 const Blogs: NextPage<Props> = ({ posts }) => {
   return (
     <div>
-      <Header />
       <section className="text-gray-600 body-font overflow-hidden">
         <div className="container px-5 py-24 mx-auto">
           <div className="-my-8 divide-y-2 divide-gray-100">
@@ -34,7 +33,6 @@ const Blogs: NextPage<Props> = ({ posts }) => {
           </div>
         </div>
       </section>
-      <Footer />
     </div>
   );
 };
