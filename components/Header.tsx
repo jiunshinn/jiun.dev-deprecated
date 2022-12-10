@@ -1,3 +1,5 @@
+import DarkModeToggleButton from "./DarkModeToggleButton";
+
 const Header = () => {
   return (
     <header className="text-gray-600 body-font">
@@ -9,9 +11,7 @@ const Header = () => {
           <a className="mr-5 hover:text-gray-900">Home</a>
           <a className="mr-5 hover:text-gray-900">Categories</a>
           <a className="mr-5 hover:text-gray-900">About</a>
-          <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
-            Button
-          </button>
+          <DarkModeToggleButton />
         </nav>
       </div>
     </header>

@@ -3,13 +3,7 @@ import BlogCard from "../../components/BlogCard";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import { readPostsInfo } from "../../lib/helper";
-
-type PostApiResponse = {
-  title: string;
-  slug: string;
-  meta: string;
-  date: Date;
-}[];
+import { PostApiResponse } from "../../utils/types";
 
 export const getStaticProps = async () => {
   const postInfo: PostApiResponse = readPostsInfo();
