@@ -3,4 +3,5 @@ export type PostApiResponse = {
   slug: string;
   meta: string;
   date: Date;
+  category: string;
 }[];

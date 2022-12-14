@@ -2,6 +2,7 @@
 title: This is new
 meta: Maybe you’ve heard of it, maybe you haven’t. Zig is a new programming language that seems to be growing in popularity. Let’s do a quick dive into what it is.
 slug: this-is-new
+category: javascript
 date: "2020-12-07"
 ---
 

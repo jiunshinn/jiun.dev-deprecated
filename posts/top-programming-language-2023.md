@@ -2,6 +2,7 @@
 title: Top programming language 2023
 meta: Maybe you’ve heard of it, maybe you haven’t. Zig is a new programming language that seems to be growing in popularity. Let’s do a quick dive into what it is.
 slug: top-programming-language-2023
+category: javascript
 date: "2020-12-07"
 ---
 

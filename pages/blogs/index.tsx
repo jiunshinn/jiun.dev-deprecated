@@ -28,6 +28,7 @@ const Blogs: NextPage<Props> = ({ posts }) => {
                 description={post.meta}
                 slug={post.slug}
                 date={post.date}
+                category={post.category}
               />
             ))}
           </div>

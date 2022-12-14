@@ -5,15 +5,16 @@ interface Props {
   description: string;
   slug: string;
   date: Date;
+  category: string;
 }
 
-const BlogCard = ({ title, description, slug, date }: Props) => {
+const BlogCard = ({ title, description, slug, date, category }: Props) => {
   return (
     <Link href={"/blogs/" + slug}>
       <div className="py-8 flex flex-wrap md:flex-nowrap">
         <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
           <span className="font-semibold title-font text-gray-700">
-            CATEGORY
+            {category}
           </span>
           <span className="mt-1 text-gray-500 text-sm">{date.toString()}</span>
         </div>
