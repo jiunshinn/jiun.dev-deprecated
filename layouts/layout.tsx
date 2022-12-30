@@ -10,7 +10,7 @@ export default function Layout(props: Props) {
   return (
     <div className="bg-primary">
       <Header />
-      <div>{props.children}</div>
+      <div className="min-h-screen">{props.children}</div>
       <Footer />
     </div>
   );
